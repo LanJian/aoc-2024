@@ -1,3 +1,5 @@
+alias fmt := format
+
 # generate the boilerplate for a new day's problem `just new 1 foo-bar-baz`
 new DAY NAME:
     scripts/new.sh {{DAY}} {{NAME}}
@@ -5,6 +7,10 @@ new DAY NAME:
 # run all integration tests
 test:
     cargo test --release -- --ignored
+
+# auto-format rust files
+format:
+    cargo fmt
 
 # run benchmarks for a given padded day `just bench 001`
 bench DAY:

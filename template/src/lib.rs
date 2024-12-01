@@ -47,8 +47,8 @@ mod tests {
 
     #[test]
     fn example() {
-        let input = "";
-        let solution = {{project-name|upper_camel_case}}::solve(input).unwrap();
+        let input = std::fs::read_to_string("example.txt").expect("Unable to load input");
+        let solution = {{project-name|upper_camel_case}}::solve(&input).unwrap();
         assert_eq!(solution, Solution::new(0, 0));
     }
 }
