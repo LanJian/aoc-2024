@@ -7,7 +7,7 @@ use rustc_hash::FxHashMap;
 #[derive(Debug, Clone)]
 pub struct HistorianHysteria {
     total_distance: u32,
-    total_similarity: usize
+    total_similarity: usize,
 }
 
 impl FromStr for HistorianHysteria {
@@ -36,7 +36,10 @@ impl FromStr for HistorianHysteria {
             total_similarity += a as usize * freq.get(&a).unwrap_or(&0);
         }
 
-        Ok(Self { total_distance, total_similarity })
+        Ok(Self {
+            total_distance,
+            total_similarity,
+        })
     }
 }
 

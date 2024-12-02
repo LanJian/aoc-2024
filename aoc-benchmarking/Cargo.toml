@@ -14,3 +14,4 @@ criterion = "0.5.1"
 [dependencies]
 aoc-plumbing = { path = "../aoc-plumbing" }
 historian-hysteria = { path = "../day-001-historian-hysteria" }
+red-nosed-reports = { path = "../day-002-red-nosed-reports" }

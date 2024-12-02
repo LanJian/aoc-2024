@@ -17,3 +17,4 @@ clap_complete = "4"
 serde = { workspace = true }
 serde_json = { workspace = true }
 historian-hysteria = { path = "../day-001-historian-hysteria" }
+red-nosed-reports = { path = "../day-002-red-nosed-reports" }
