@@ -1,6 +1,7 @@
 use std::str::FromStr;
 
 use aoc_plumbing::Problem;
+use rustc_hash::FxHashSet;
 
 #[derive(Debug, Clone, Default, Eq, PartialEq)]
 struct Report {
@@ -48,9 +49,11 @@ impl Report {
     }
 
     fn is_safe_single_tolerance(&self) -> bool {
-        let mut tolerance: Option<usize> = None;
+        let mut acc_candidates = FxHashSet::default();
 
         for i in 3..self.levels.len() {
+            let mut cur_candidates = FxHashSet::default();
+
             let a = self.levels[i - 3];
             let b = self.levels[i - 2];
             let c = self.levels[i - 1];
@@ -64,23 +67,32 @@ impl Report {
                 (-3..=-1, -3..=-1, -3..=-1) => (),
                 (1..=3, 1..=3, 1..=3) => (),
                 _ => {
-                    if Self::is_gradually_monotonic(b, c, d)
-                        && tolerance.map_or(true, |x| x == i - 3)
-                    {
-                        tolerance = Some(i - 3);
-                    } else if Self::is_gradually_monotonic(a, c, d)
-                        && tolerance.map_or(true, |x| x == i - 2)
-                    {
-                        tolerance = Some(i - 2);
-                    } else if Self::is_gradually_monotonic(a, b, d)
-                        && tolerance.map_or(true, |x| x == i - 1)
-                    {
-                        tolerance = Some(i - 1);
-                    } else if Self::is_gradually_monotonic(a, b, c)
-                        && tolerance.map_or(true, |x| x == i)
-                    {
-                        tolerance = Some(i);
+                    if Self::is_gradually_monotonic(b, c, d) {
+                        cur_candidates.insert(i - 3);
+                    }
+
+                    if Self::is_gradually_monotonic(a, c, d) {
+                        cur_candidates.insert(i - 2);
+                    }
+
+                    if Self::is_gradually_monotonic(a, b, d) {
+                        cur_candidates.insert(i - 1);
+                    }
+
+                    if Self::is_gradually_monotonic(a, b, c) {
+                        cur_candidates.insert(i);
+                    }
+
+                    if acc_candidates.is_empty() {
+                        acc_candidates = cur_candidates;
                     } else {
+                        acc_candidates = acc_candidates
+                            .intersection(&cur_candidates)
+                            .copied()
+                            .collect();
+                    }
+
+                    if acc_candidates.is_empty() {
                         return false;
                     }
                 }
@@ -158,5 +170,12 @@ mod tests {
         let input = std::fs::read_to_string("example.txt").expect("Unable to load input");
         let solution = RedNosedReports::solve(&input).unwrap();
         assert_eq!(solution, Solution::new(2, 4));
+    }
+
+    #[test]
+    fn example_2() {
+        let input = "58 56 54 51 53 49";
+        let solution = RedNosedReports::solve(input).unwrap();
+        assert_eq!(solution, Solution::new(0, 1));
     }
 }
