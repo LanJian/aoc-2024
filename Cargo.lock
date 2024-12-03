@@ -79,6 +79,7 @@ dependencies = [
  "aoc-plumbing",
  "criterion",
  "historian-hysteria",
+ "mull-it-over",
  "red-nosed-reports",
 ]
 
@@ -91,6 +92,7 @@ dependencies = [
  "clap",
  "clap_complete",
  "historian-hysteria",
+ "mull-it-over",
  "red-nosed-reports",
  "serde",
  "serde_json",
@@ -404,6 +406,18 @@ name = "minimal-lexical"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "68354c5c6bd36d73ff3feceb05efa59b6acb7626617f4962be322a825e61f79a"
+
+[[package]]
+name = "mull-it-over"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aoc-plumbing",
+ "nom",
+ "regex",
+ "rustc-hash",
+ "serde",
+]
 
 [[package]]
 name = "nom"
