@@ -4,6 +4,7 @@ members = [
     "aoc-benchmarking",
     "aoc-cli",
     "aoc-plumbing",
+    "aoc-common",
     "day-*",
 ]
 
