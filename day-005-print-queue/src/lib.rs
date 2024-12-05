@@ -48,7 +48,8 @@ impl FromStr for PrintQueue {
             if pages.windows(2).all(|x| rules.contains(&(x[0], x[1]))) {
                 valid_sum += pages[pages.len() / 2];
             } else {
-                pages.sort_unstable_by(|&a, &b| {
+                let i = pages.len() / 2;
+                let (_, mid, _) = pages.select_nth_unstable_by(i, |&a, &b| {
                     if rules.contains(&(a, b)) {
                         Ordering::Less
                     } else if rules.contains(&(b, a)) {
@@ -58,7 +59,7 @@ impl FromStr for PrintQueue {
                     }
                 });
 
-                invalid_sum += pages[pages.len() / 2];
+                invalid_sum += *mid;
             }
         }
 
