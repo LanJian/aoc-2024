@@ -140,6 +140,7 @@ dependencies = [
  "anyhow",
  "aoc-plumbing",
  "nom",
+ "rayon",
  "rustc-hash",
  "serde",
 ]

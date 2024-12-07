@@ -2,6 +2,7 @@ use std::str::FromStr;
 
 use anyhow::anyhow;
 use aoc_plumbing::Problem;
+use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 
 #[derive(Debug, Clone, Default, Eq, PartialEq)]
 struct Equation {
@@ -86,7 +87,7 @@ impl FromStr for BridgeRepair {
 impl BridgeRepair {
     fn total_calibration_result(&self) -> u64 {
         self.equations
-            .iter()
+            .par_iter()
             .filter(|&x| x.test())
             .map(|x| x.value)
             .sum()
@@ -94,7 +95,7 @@ impl BridgeRepair {
 
     fn total_calibration_result_with_concat(&self) -> u64 {
         self.equations
-            .iter()
+            .par_iter()
             .filter(|&x| x.test_with_concat())
             .map(|x| x.value)
             .sum()
