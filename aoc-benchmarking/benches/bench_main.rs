@@ -1,6 +1,7 @@
 use criterion::criterion_main;
 
 use aoc_benchmarking::aoc_benches;
+use bridge_repair::BridgeRepair;
 use ceres_search::CeresSearch;
 use guard_gallivant::GuardGallivant;
 use historian_hysteria::HistorianHysteria;
@@ -52,6 +53,13 @@ aoc_benches! {
         day_006,
         "../day-006-guard-gallivant/input.txt",
         GuardGallivant,
+        "Part 1",
+        "Part 2"
+    ),
+    (
+        day_007,
+        "../day-007-bridge-repair/input.txt",
+        BridgeRepair,
         "Part 1",
         "Part 2"
     ),
