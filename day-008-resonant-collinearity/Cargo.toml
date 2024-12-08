@@ -1,16 +1,16 @@
 [package]
-name = "{{project-name}}"
+name = "resonant-collinearity"
 version = "0.1.0"
 edition = "2021"
-description = "{{project-name|title_case|downcase}}"
+description = "resonant collinearity"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 aoc-plumbing = { path = "../aoc-plumbing" }
-# aoc-common = { path = "../aoc-common" }
+aoc-common = { path = "../aoc-common" }
 anyhow = { workspace = true }
-# itertools = { workspace = true }
+itertools = { workspace = true }
 nom = { workspace = true }
 # rayon = { workspace = true }
 rustc-hash = { workspace = true }

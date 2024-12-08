@@ -238,6 +238,15 @@ where
         }
     }
 
+    pub fn set(&mut self, coord: Coordinate, value: T) -> bool {
+        if self.is_in_bounds(coord) {
+            self[coord] = value;
+            true
+        } else {
+            false
+        }
+    }
+
     pub fn is_in_bounds(&self, coord: Coordinate) -> bool {
         (0..self.n as isize).contains(&coord.0) && (0..self.m as isize).contains(&coord.1)
     }
