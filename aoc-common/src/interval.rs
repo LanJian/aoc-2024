@@ -1,7 +1,7 @@
 #[derive(Debug, Clone, Copy, Default, Eq, PartialEq, Ord, PartialOrd)]
 pub struct Interval {
-    start: isize,
-    end: isize,
+    pub start: isize,
+    pub end: isize,
 }
 
 impl Interval {
@@ -14,6 +14,16 @@ impl Interval {
             Some((Self::new(self.start, x), Self::new(x, self.end)))
         } else {
             None
+        }
+    }
+
+    pub fn split_unchecked(&self, x: isize) -> (Interval, Interval) {
+        if self.greater_than(x) {
+            (Self::new(self.start, self.start), *self)
+        } else if self.less_than(x) {
+            (*self, Self::new(self.end, self.end))
+        } else {
+            (Self::new(self.start, x), Self::new(x, self.end))
         }
     }
 
@@ -46,6 +56,16 @@ impl Interval {
                 self.end.min(other.end),
             ))
         }
+    }
+
+    pub fn sum(&self) -> isize {
+        (self.start + self.end - 1) * self.len() as isize / 2
+    }
+}
+
+impl From<(isize, isize)> for Interval {
+    fn from(value: (isize, isize)) -> Self {
+        Self::new(value.0, value.1)
     }
 }
 

@@ -3,6 +3,7 @@ use criterion::criterion_main;
 use aoc_benchmarking::aoc_benches;
 use bridge_repair::BridgeRepair;
 use ceres_search::CeresSearch;
+use disk_fragmenter::DiskFragmenter;
 use guard_gallivant::GuardGallivant;
 use historian_hysteria::HistorianHysteria;
 use mull_it_over::MullItOver;
@@ -68,6 +69,13 @@ aoc_benches! {
         day_008,
         "../day-008-resonant-collinearity/input.txt",
         ResonantCollinearity,
+        "Part 1",
+        "Part 2"
+    ),
+    (
+        day_009,
+        "../day-009-disk-fragmenter/input.txt",
+        DiskFragmenter,
         "Part 1",
         "Part 2"
     ),
