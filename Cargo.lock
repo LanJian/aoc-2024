@@ -83,6 +83,7 @@ dependencies = [
  "disk-fragmenter",
  "guard-gallivant",
  "historian-hysteria",
+ "hoof-it",
  "mull-it-over",
  "print-queue",
  "red-nosed-reports",
@@ -102,6 +103,7 @@ dependencies = [
  "disk-fragmenter",
  "guard-gallivant",
  "historian-hysteria",
+ "hoof-it",
  "mull-it-over",
  "print-queue",
  "red-nosed-reports",
@@ -398,6 +400,19 @@ dependencies = [
  "anyhow",
  "aoc-plumbing",
  "nom",
+ "rustc-hash",
+ "serde",
+]
+
+[[package]]
+name = "hoof-it"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aoc-common",
+ "aoc-plumbing",
+ "nom",
+ "rayon",
  "rustc-hash",
  "serde",
 ]
