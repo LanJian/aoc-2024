@@ -4,12 +4,11 @@ use anyhow::anyhow;
 use aoc_common::grid::{Coordinate, Grid};
 use aoc_plumbing::Problem;
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
-use rustc_hash::FxHashSet;
 
 #[derive(Debug, Clone)]
 pub struct HoofIt {
     grid: Grid<u8>,
-    trailheads: FxHashSet<Coordinate>,
+    trailheads: Vec<Coordinate>,
 }
 
 impl FromStr for HoofIt {
@@ -17,7 +16,7 @@ impl FromStr for HoofIt {
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         let mut cells = Vec::default();
-        let mut trailheads = FxHashSet::default();
+        let mut trailheads = Vec::default();
 
         for (i, line) in s.lines().enumerate() {
             let mut row = Vec::default();
@@ -29,7 +28,7 @@ impl FromStr for HoofIt {
                     .ok_or_else(|| anyhow!("invalid cell"))?;
 
                 if d == 0 {
-                    trailheads.insert((i, j).into());
+                    trailheads.push((i, j).into());
                 }
 
                 row.push(d);

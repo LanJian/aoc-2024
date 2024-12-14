@@ -8,6 +8,7 @@ use guard_gallivant::GuardGallivant;
 use historian_hysteria::HistorianHysteria;
 use hoof_it::HoofIt;
 use mull_it_over::MullItOver;
+use plutonian_pebbles::PlutonianPebbles;
 use print_queue::PrintQueue;
 use red_nosed_reports::RedNosedReports;
 use resonant_collinearity::ResonantCollinearity;
@@ -84,6 +85,13 @@ aoc_benches! {
         day_010,
         "../day-010-hoof-it/input.txt",
         HoofIt,
+        "Part 1",
+        "Part 2"
+    ),
+    (
+        day_011,
+        "../day-011-plutonian-pebbles/input.txt",
+        PlutonianPebbles,
         "Part 1",
         "Part 2"
     ),

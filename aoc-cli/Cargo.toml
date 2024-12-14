@@ -26,3 +26,4 @@ bridge-repair = { path = "../day-007-bridge-repair" }
 resonant-collinearity = { path = "../day-008-resonant-collinearity" }
 disk-fragmenter = { path = "../day-009-disk-fragmenter" }
 hoof-it = { path = "../day-010-hoof-it" }
+plutonian-pebbles = { path = "../day-011-plutonian-pebbles" }
