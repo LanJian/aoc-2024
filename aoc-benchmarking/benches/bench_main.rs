@@ -4,6 +4,7 @@ use aoc_benchmarking::aoc_benches;
 use bridge_repair::BridgeRepair;
 use ceres_search::CeresSearch;
 use disk_fragmenter::DiskFragmenter;
+use garden_groups::GardenGroups;
 use guard_gallivant::GuardGallivant;
 use historian_hysteria::HistorianHysteria;
 use hoof_it::HoofIt;
@@ -92,6 +93,13 @@ aoc_benches! {
         day_011,
         "../day-011-plutonian-pebbles/input.txt",
         PlutonianPebbles,
+        "Part 1",
+        "Part 2"
+    ),
+    (
+        day_012,
+        "../day-012-garden-groups/input.txt",
+        GardenGroups,
         "Part 1",
         "Part 2"
     ),

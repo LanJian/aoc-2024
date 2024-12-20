@@ -10,6 +10,7 @@ use ceres_search::CeresSearch;
 use clap::{Args, CommandFactory, Parser, Subcommand};
 use clap_complete::{generate, shells::Zsh};
 use disk_fragmenter::DiskFragmenter;
+use garden_groups::GardenGroups;
 use guard_gallivant::GuardGallivant;
 use historian_hysteria::HistorianHysteria;
 use hoof_it::HoofIt;
@@ -186,5 +187,6 @@ generate_cli! {
     (DiskFragmenter, 9),
     (HoofIt, 10),
     (PlutonianPebbles, 11),
+    (GardenGroups, 12),
     // command_marker
 }
