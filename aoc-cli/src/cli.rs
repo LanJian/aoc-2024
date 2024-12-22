@@ -20,6 +20,7 @@ use plutonian_pebbles::PlutonianPebbles;
 use print_queue::PrintQueue;
 use red_nosed_reports::RedNosedReports;
 use resonant_collinearity::ResonantCollinearity;
+use restroom_redoubt::RestroomRedoubt;
 // import_marker
 
 // I'm not proud
@@ -190,5 +191,6 @@ generate_cli! {
     (PlutonianPebbles, 11),
     (GardenGroups, 12),
     (ClawContraption, 13),
+    (RestroomRedoubt, 14),
     // command_marker
 }

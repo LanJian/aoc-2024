@@ -91,6 +91,7 @@ dependencies = [
  "print-queue",
  "red-nosed-reports",
  "resonant-collinearity",
+ "restroom-redoubt",
 ]
 
 [[package]]
@@ -114,6 +115,7 @@ dependencies = [
  "print-queue",
  "red-nosed-reports",
  "resonant-collinearity",
+ "restroom-redoubt",
  "serde",
  "serde_json",
 ]
@@ -770,6 +772,18 @@ dependencies = [
  "aoc-common",
  "aoc-plumbing",
  "itertools 0.11.0",
+ "nom",
+ "rustc-hash",
+ "serde",
+]
+
+[[package]]
+name = "restroom-redoubt"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aoc-common",
+ "aoc-plumbing",
  "nom",
  "rustc-hash",
  "serde",

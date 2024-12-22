@@ -60,7 +60,7 @@ where
     }
 }
 
-#[derive(Default, Debug, Clone, Copy, PartialEq)]
+#[derive(Default, Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Point3<T>
 where
     T: Copy + Num,
