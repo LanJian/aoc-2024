@@ -1,4 +1,5 @@
 use std::fmt::{self, Debug};
+use std::hash::Hash;
 use std::str::FromStr;
 use std::{
     convert::TryFrom,
