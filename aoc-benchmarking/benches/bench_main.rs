@@ -10,6 +10,7 @@ use garden_groups::GardenGroups;
 use guard_gallivant::GuardGallivant;
 use historian_hysteria::HistorianHysteria;
 use hoof_it::HoofIt;
+use linen_layout::LinenLayout;
 use mull_it_over::MullItOver;
 use plutonian_pebbles::PlutonianPebbles;
 use print_queue::PrintQueue;
@@ -148,6 +149,12 @@ aoc_benches! {
         RamRun,
         "Part 1",
         "Part 2"
+    ),
+    (
+        day_019,
+        "../day-019-linen-layout/input.txt",
+        LinenLayout,
+        "Combined (including parsing)"
     ),
     // bench_marker
 }
