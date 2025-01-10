@@ -14,6 +14,7 @@ use linen_layout::LinenLayout;
 use mull_it_over::MullItOver;
 use plutonian_pebbles::PlutonianPebbles;
 use print_queue::PrintQueue;
+use race_condition::RaceCondition;
 use ram_run::RamRun;
 use red_nosed_reports::RedNosedReports;
 use reindeer_maze::ReindeerMaze;
@@ -154,6 +155,12 @@ aoc_benches! {
         day_019,
         "../day-019-linen-layout/input.txt",
         LinenLayout,
+        "Combined (including parsing)"
+    ),
+    (
+        day_020,
+        "../day-020-race-condition/input.txt",
+        RaceCondition,
         "Combined (including parsing)"
     ),
     // bench_marker

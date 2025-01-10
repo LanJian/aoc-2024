@@ -91,6 +91,7 @@ dependencies = [
  "mull-it-over",
  "plutonian-pebbles",
  "print-queue",
+ "race-condition",
  "ram-run",
  "red-nosed-reports",
  "reindeer-maze",
@@ -120,6 +121,7 @@ dependencies = [
  "mull-it-over",
  "plutonian-pebbles",
  "print-queue",
+ "race-condition",
  "ram-run",
  "red-nosed-reports",
  "reindeer-maze",
@@ -737,6 +739,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b5b9d34b8991d19d98081b46eacdd8eb58c6f2b201139f7c5f643cc155a633af"
 dependencies = [
  "proc-macro2",
+]
+
+[[package]]
+name = "race-condition"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aoc-common",
+ "aoc-plumbing",
+ "nom",
+ "rayon",
+ "rustc-hash",
+ "serde",
 ]
 
 [[package]]
